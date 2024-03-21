@@ -1,15 +1,16 @@
-function appendToDisplay(value) {
-  document.getElementById('display').value += value;
+function clearDisplay() {
+    document.getElementById('display').value = '';
 }
 
-function clearDisplay() {
-  document.getElementById('display').value = '';
+function appendValue(value) {
+    document.getElementById('display').value += value;
 }
 
 function calculate() {
-  try {
-    document.getElementById('display').value = eval(document.getElementById('display').value);
-  } catch (error) {
-    document.getElementById('display').value = 'Error';
-  }
+    var display = document.getElementById('display');
+    try {
+        display.value = eval(display.value);
+    } catch (error) {
+        display.value = 'Error';
+    }
 }
